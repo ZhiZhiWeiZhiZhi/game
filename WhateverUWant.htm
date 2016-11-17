@@ -1,0 +1,512 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>whatever you want</title>
+    <style type="text/css">
+        body, div{  margin: 0px;padding: 0px; font-size:12px;}
+        body {background-color: rgba(254, 252, 252, 0.12);}
+        div{border: solid red 1px;margin-left:50%;left:-400px;position:absolute}
+        .container{top:40px; left:0px;border-width:0px;}
+		.displaynone{display:none;}
+        .positionrealative{position: relative;}
+        .H10{ height: 10px;}
+        .W10{ width: 10px;}
+        .W800{width:800px;}
+        .lineTop{top:29px; left:-321px;width:654px;border-color:rgba(95, 158, 160, 0.61);background-color:#fefcfc}
+        .lineLeft{top:67px;height: 447px;left:-377px;border-color:rgba(128, 128, 0, 0.44);background-color:#fefcfc }
+        .lineBottom{top:542px; left:-321px;width:654px;border-color:rgba(184, 134, 11, 0.61);background-color:#fefcfc}
+        .colorABCDE {border-color:rgba(65, 105, 225, 0.27); background-color:rgba(84, 121, 229, 0.88)}
+        .colorAC {border-color:rgba(95, 158, 160, 0.26); background-color:#fefcfc}
+        .colorAB {border-color:rgba(128, 128, 0, 0.44); background-color:#fefcfc}
+        .colorBD {border-color:rgba(184, 134, 11, 0.26); background-color:#fefcfc}
+        .colorAE {border-color:rgba(205, 133, 63, 0.41); background-color:#fefcfc}
+        .colorBE {border-color:rgba(154, 205, 50, 0.52); background-color:#fefcfc}
+        .colorCE {border-color:rgba(0, 128, 128, 0.44); background-color:#fefcfc}
+        .colorDE {border-color:rgba(208, 32, 144, 0.50); background-color:#fefcfc}
+        .colorLines {border-color:rgba(65, 105, 225, 0.27); background-color:#fefcfc}
+        .ABCDE{color:White; border-width:0px; height:30px; width:30px;  font-size:25px; text-align:center; vertical-align:middle;  z-index:999;}
+        .ABCDE div{height:33px; width:41px; position:relative;left:-20px;top:1px; }
+        .redBackground{background-color:rgba(251, 4, 4, 0.66);border-width:0px;}
+        .redA{top:28px;left:-372px;}
+        .redB{top:522px;left:-372px;}
+        .blackBackground{background-color:rgba(0, 0, 0, 0.66);border-width:0px;}
+        .blackC{top:28px;left:355px;}
+        .blackD{top:522px;left:355px;}
+        .greenBackground{border-width:0px;}
+        .blackE{top:276px;left:-9px; z-index:998}
+        .other{width:185px;height:105px; top:238px; left:200px; text-align:center; background-color:rgba(65, 105, 225, 0.03);border-width:0px;z-index:2; }
+        .otherbehind{width:189px;height:109px; top:238px; left:200px; text-align:center; background-color:rgba(65, 105, 225, 0.03);border-width:0px;z-index:1; } 
+        .other .contents{font-size:14px; position:relative;border: solid red 0px;margin-left:auto; margin-top:10px; left:auto; text-align:center; color:#4169E1}
+        .message{font-size:18px; border: solid red 0px;left:-100px; width:200px; top:100px; padding-top:5px;padding-bottom:5px;  text-align:center; color:rgba(251, 4, 4, 0.66)}
+   </style>
+</head>
+<body>
+	<div class="container">
+        <!--AC-->
+    	<div id="lineAC" class="H10 lineTop colorLines"></div>
+        <div class="H10 W10 colorABCDE" style="left:379px; top:48px;"></div>
+        <script type="text/javascript">
+            for (var i = 1; i < 27; i++) {
+                var str = "<div id=\"lineAC" + i + "\" class=\"W10 H10 ";
+                if (i == 1 || i ==26) {
+                    str = str + "colorABCDE";
+                } else {
+                    str = str + "colorAC colorLines";
+                }
+                str = str + "\" style=\"";
+                var lef = -405 + 56 * (i + 1) / 2;
+                str = str + "top:29px;left:" + lef + "px;\"";
+                str = str + "></div>";
+                document.write(str);
+            }
+        </script>
+        <div id="Div1" class="H10 lineTop colorLines" style="top:48px;"></div>
+        <script type="text/javascript">
+            for (var i = 1; i < 27; i++) {
+                var str = "<div id=\"lineAC" + i + "\" class=\"W10 H10 ";
+                if (i == 1 || i == 26) {
+                    str = str + "colorABCDE";
+                } else {
+                    str = str + "colorAC colorLines";
+                }
+                str = str + "\" style=\"";
+                var lef = -405 + 56 * (i + 1) / 2;
+                str = str + "top:48px;left:" + lef + "px;\"";
+                str = str + "></div>";
+                document.write(str);
+            }
+        </script>
+        <!--AB-->
+        <div id="lineAB" class="lineLeft W10 colorLines"></div>
+        <script type="text/javascript">
+            for (var i = 1; i < 19; i++) {
+                var str = "<div id=\"lineAB" + i + "\" class=\"W10 H10 ";
+                if (i == 1 || i == 18) {
+                    str = str + "colorABCDE";
+                } else {
+                    str = str + "colorAB colorLines";
+                }
+                str = str + "\" style=\"";
+                var t = -7 + 55.8 * (i + 1) / 2;
+                str = str + "top:" + t + "px;left:-377px\"";
+                str = str + "></div>";
+                document.write(str);
+            }
+        </script>
+        <div id="Div3" class="lineLeft W10 colorLines" style="left:-349px"></div>
+        <script type="text/javascript">
+            for (var i = 1; i < 19; i++) {
+                var str = "<div id=\"lineAB" + i + "\" class=\"W10 H10 ";
+                if (i == 1 || i == 26) {
+                    str = str + "colorABCDE";
+                } else {
+                    str = str + "colorAB colorLines";
+                }
+                str = str + "\" style=\"";
+                var t = -7 + 55.8 * (i + 1) / 2;
+                str = str + "top:" + t + "px;left:-349px\"";
+                str = str + "></div>";
+                document.write(str);
+            }
+        </script>
+        <!--BD-->
+        <div id="lineBD" class="lineBottom H10 colorLines"></div>
+        <div class="H10 W10 colorABCDE " style="left:379px; top:523px;"></div>
+        <script type="text/javascript">
+            for (var i = 1; i < 27; i++) {
+                var str = "<div id=\"lineBD" + i + "\" class=\"W10 H10 ";
+                if (i == 1 || i == 26) {
+                    str = str + "colorABCDE";
+                } else {
+                    str = str + "colorBD colorLines";
+                }
+                str = str + "\" style=\"";
+                var lef = -405 + 56 * (i + 1) / 2;
+                str = str + "top:542px;left:" + lef + "px;\"";
+                str = str + "></div>";
+                document.write(str);
+            }
+        </script>
+        <div id="Div2" class="lineBottom H10 colorLines" style="top:523px"></div>
+        <script type="text/javascript">
+            for (var i = 1; i < 27; i++) {
+                var str = "<div id=\"lineBD" + i + "\" class=\"W10 H10 ";
+                if (i == 1 || i == 26) {
+                    str = str + "colorABCDE";
+                } else {
+                    str = str + "colorBD colorLines";
+                }
+                str = str + "\" style=\"";
+                var lef = -405 + 56 * (i + 1) / 2;
+                str = str + "top:523px;left:" + lef + "px;\"";
+                str = str + "></div>";
+                document.write(str);
+            }
+        </script>
+        <!--AE、BE、CE、DE-->
+        <script type="text/javascript">            
+        for (var i = 1; i < 57; i++) {
+            var str = "<div id=\"lineE" + i + "\" class=\"W10 H10 absolute ";
+            if (i < 5 || i > 52 || (i > 26 && i < 31)) {
+                str = str + "colorABCDE ";
+            }
+            if (i % 2 == 1) {
+                if (i < 5 || i > 52 || (i > 26 && i < 31)) {
+                    
+                }else if (i < 27) {
+                    str = str + "colorAE colorLines";
+                } else {
+                    str = str + "colorDE colorLines";
+                }
+                str = str + "\" style=\"";
+                var t = 10 + 19 * (i + 1) / 2;
+                var lef = -405 + 28 * (i + 1) / 2;
+                str = str + "top:" + t + "px;left:" + lef + "px;\"";
+            } else {
+                if (i < 5 || i > 52 || (i > 26 && i < 31)) {
+                    
+                }else if (i < 27) {
+                    str = str + "colorCE colorLines";
+                } else {
+                    str = str + "colorBE colorLines";
+                }
+                str = str + "\" style=\"";
+                var t = 10 + 19 * (i / 2);
+                var lef = 407 - 28 * (i / 2);
+                str = str + "top:" + t + "px;left:" + lef + "px;\"";
+            }
+            str = str + "></div>";
+            document.write(str);
+        }
+        </script>
+        <div id="A" class="ABCDE redA "><div class="redBackground"></div></div>
+        <div id="B" class="ABCDE redB "><div class="redBackground"></div></div>
+        <div id="C" class="ABCDE blackC "><div class="blackBackground"></div></div>
+        <div id="D" class="ABCDE blackD "><div class="blackBackground"></div></div>
+        <div id="E" class="ABCDE blackE displaynone"></div>
+        <div class="other"><div class="contents"></div></div>
+        <div class="otherbehind"></div>
+        <div id="message" class="message"></div>
+	</div>
+    <script type="text/javascript">
+        //ABCDE 
+        onload = function (event) {
+            FC.e = event;
+            wyw.init();           
+        };
+        /*whatever you want*/
+        wyw = {
+            lineStart: '',
+            lineEnd: 'E',
+            robotNote: '',
+            // lineFree: 'E',
+            // line: ["AB", "AC", "AE", "BA", "BD", "BE", "CA", "CE", "DB", "DE", "EA", "EB", "EC", "ED"],
+            // isFree: { A: false, B: false, C: false, D: false, E: true },
+            line: {
+                A: { left: -372, top: 28 },
+                B: { left: -372, top: 522 },
+                C: { left: 355, top: 28 },
+                D: { left: 355, top: 522 },
+                E: { left: -9, top: 276 },
+                idArr: ["A", "B", "C", "D", "E"],
+                group: ["ARed", "BRed", "CBlack", "DBlack", "E"],
+                host: "red"
+            },
+            init: function () {
+                FC.$("message").innerHTML = "red side first<br />please moveing red side";
+                //FC.$("message").innerHTML = "game over !<br />the black side win !<br /><br />let's <a href='javascript:wyw.init()'>do</a> it again";
+                FC.$("A").setAttribute("style", "");
+                FC.$("B").setAttribute("style", "");
+                FC.$("C").setAttribute("style", "");
+                FC.$("D").setAttribute("style", "");
+                FC.$("E").setAttribute("style", "");
+
+                FC.$("A").innerHTML = "<div class=\"redBackground\"></div>";
+                FC.$("B").innerHTML = "<div class=\"redBackground\"></div>";
+                FC.$("C").innerHTML = "<div class=\"blackBackground\"></div>";
+                FC.$("D").innerHTML = "<div class=\"blackBackground\"></div>";
+                FC.$("E").innerHTML = "";
+
+                //init group
+                FC.$("A").setAttribute("group", "red");
+                FC.$("B").setAttribute("group", "red");
+                FC.$("C").setAttribute("group", "black");
+                FC.$("D").setAttribute("group", "black");
+                FC.$("E").setAttribute("group", "");
+                this.lineStart = "";
+                this.lineEnd = "E";
+                this.line.host = "red";
+                this.initEvent();
+            },
+            /*init onmouseover,onmouseout,onmousemove*/
+            initEvent: function () {
+                FC.len = wyw.line.idArr.length;
+                for (var i = 0; i < FC.len; i++) {
+                    if (FC.$(wyw.line.idArr[i]).getAttribute("group") == this.line.host) {
+                        FC.$(wyw.line.idArr[i]).onmouseover = function () {
+                            wyw.findGreenLine(this);
+                            if (FC.arr.length == 0) return;
+                            wyw.lineColor('green');
+                            FC.display(wyw.lineEnd, 'block');
+                            this.onmouseout = function () { wyw.lineColor('red'); FC.display(wyw.lineEnd, 'none'); }
+                        }
+                        wyw.findGreenLine(FC.$(wyw.line.idArr[i]));
+                        if (FC.arr.length > 0) {
+                            FC.moveing(FC.$(wyw.line.idArr[i]));
+                            FC.$(wyw.line.idArr[i]).title = "moveing";
+                        }
+                    } else {
+                        FC.$(wyw.line.idArr[i]).title = "";
+                        FC.$(wyw.line.idArr[i]).onmousedown = null;
+                        FC.$(wyw.line.idArr[i]).onmousemove = null;
+                        FC.$(wyw.line.idArr[i]).onmouseup = null;
+                        FC.$(wyw.line.idArr[i]).onmouseover = null;
+                        FC.$(wyw.line.idArr[i]).onmouseout = null;
+                    }
+                }
+            },
+            robot: function () {
+                if (this.line.host == "black") {
+                    arrBlack = new Array();
+                    FC.len = wyw.line.idArr.length;
+                    for (var i = 0; i < FC.len; i++) {
+                        if (FC.$(wyw.line.idArr[i]).getAttribute("group") == "black") {
+                            arrBlack[arrBlack.length] = wyw.line.idArr[i];
+                        }
+                    }
+
+                    this.findGreenLine(FC.$(arrBlack[0]));
+                    FC.len = FC.arr.length;
+                    this.findGreenLine(FC.$(arrBlack[1]));
+                    if (FC.len > 0 && FC.arr.length > 0) {//two choose
+                        //right choose
+                        if (FC.$(arrBlack[0]).style.top == FC.$(this.lineEnd).style.top) {
+                            wyw.lineStart = arrBlack[0];
+                        } else if (FC.$(arrBlack[1]).style.top == FC.$(this.lineEnd).style.top) {
+                            wyw.lineStart = arrBlack[1];
+                        } else {
+                            wyw.lineStart = arrBlack[0] == this.robotNote ? arrBlack[(new Date()).getSeconds() % 2] : arrBlack[(new Date()).getSeconds() % 2];
+                        }
+                        //random choose
+                        //wyw.lineStart = arrBlack[(new Date()).getSeconds() % 2];
+                    } else {
+                        this.findGreenLine(FC.$(arrBlack[0]));
+                        if (FC.arr.length > 0) {
+                            wyw.lineStart = arrBlack[0];
+                        } else {
+                            wyw.lineStart = arrBlack[1];
+                        }
+                    } 
+                    this.robotNote = wyw.lineEnd;
+                    this.findGreenLine(FC.$(wyw.lineStart));
+                    this.lineColor('green');
+                    FC.display(wyw.lineEnd, 'block');
+
+                    // robot to move
+                    var stepLeft = 0, stepTop = 0, t = 200;
+                    lineStartLeft = FC.trimPX(FC.$(this.lineStart).style.left);
+                    lineStartTop = FC.trimPX(FC.$(this.lineStart).style.top);
+
+                    lineEndtLeft = FC.trimPX(FC.$(this.lineEnd).style.left);
+                    lineEndTop = FC.trimPX(FC.$(this.lineEnd).style.top);
+
+                    stepLeft = (lineEndtLeft - lineStartLeft) / t;
+                    stepTop = (lineEndTop - lineStartTop) / t;
+                    this.robotMoveing(stepLeft, stepTop, lineStartLeft, lineStartTop, lineEndtLeft, lineEndTop);
+                }
+            },
+            robotMoveing: function (stepLeft, stepTop, lineStartLeft, lineStartTop, lineEndtLeft, lineEndTop) {
+                FC.$(wyw.lineStart).style.left = (FC.trimPX(FC.$(wyw.lineStart).style.left) + stepLeft) + "px";
+
+                lineStartLeftCurrent = FC.trimPX(FC.$(wyw.lineStart).style.left);
+                lineStartTopCurrent = FC.trimPX(FC.$(wyw.lineStart).style.top);
+
+                stepTop = (stepLeft == 0 || stepTop == 0) ? stepTop : ((lineStartLeftCurrent - lineStartLeft) * (lineEndTop - lineStartTop) / (lineEndtLeft - lineStartLeft) + lineStartTop - lineStartTopCurrent);
+                if (lineEndTop > lineStartTop) {
+                    stepTop = stepTop > 0 ? stepTop : 0 - stepTop;
+                } else if (lineEndTop < lineStartTop) {
+                    stepTop = stepTop > 0 ? 0 - stepTop : stepTop;
+                }
+
+                FC.$(wyw.lineStart).style.top = (FC.trimPX(FC.$(wyw.lineStart).style.top) + stepTop) + "px";
+
+                if (FC.trimPX(FC.$(wyw.lineStart).style.left) - lineEndtLeft > -10 &&
+                    FC.trimPX(FC.$(wyw.lineStart).style.left) - lineEndtLeft < 10 &&
+                    FC.trimPX(FC.$(wyw.lineStart).style.top) - lineEndTop > -10 &&
+                    FC.trimPX(FC.$(wyw.lineStart).style.top) - lineEndTop < 10) {
+
+                    wyw.changeStyle(FC.$(wyw.lineStart));
+                    return;
+                }
+                var code = "wyw.robotMoveing(" + stepLeft + "," + stepTop + "," + lineStartLeft + "," + lineStartTop + "," + lineEndtLeft + "," + lineEndTop + ")";
+                setTimeout(code, 1);
+            },
+            getLine: function (obj) {
+                switch (obj.id) {
+                    case "A": return wyw.line.A;
+                    case "B": return wyw.line.B;
+                    case "C": return wyw.line.C;
+                    case "D": return wyw.line.D;
+                    case "E": return wyw.line.E;
+                }
+            },
+            changeStyle: function (obj) {
+                wyw.lineStart = obj.id;
+                lineStartXY = wyw.getLine(FC.$(wyw.lineStart));
+                lineEndXY = wyw.getLine(FC.$(wyw.lineEnd));
+
+                lineStartLfet = FC.trimPX(FC.$(wyw.lineStart).style.left);
+                lineStartTop = FC.trimPX(FC.$(wyw.lineStart).style.top);
+
+                if (lineStartLfet - lineEndXY.left > -100 && lineStartLfet - lineEndXY.left < 100 &&
+                    lineStartTop - lineEndXY.top > -100 && lineStartTop - lineEndXY.top < 100) {
+
+                    FC.v = FC.$(wyw.lineStart).style.borderColor;
+                    FC.$(wyw.lineStart).style.borderColor = FC.$(wyw.lineEnd).style.borderColor;
+                    FC.$(wyw.lineEnd).style.borderColor = FC.v;
+
+                    FC.v = FC.$(wyw.lineStart).style.backgroundColor;
+                    FC.$(wyw.lineStart).style.backgroundColor = FC.$(wyw.lineEnd).style.backgroundColor;
+                    FC.$(wyw.lineEnd).style.backgroundColor = FC.v;
+
+                    FC.v = FC.$(wyw.lineStart).style.display;
+                    FC.$(wyw.lineStart).style.display = FC.$(wyw.lineEnd).style.display;
+                    FC.$(wyw.lineEnd).style.display = FC.v;
+
+                    FC.v = FC.$(wyw.lineStart).innerHTML;
+                    FC.$(wyw.lineStart).innerHTML = FC.$(wyw.lineEnd).innerHTML;
+                    FC.$(wyw.lineEnd).innerHTML = FC.v;
+
+                    FC.v = FC.$(wyw.lineStart).getAttribute("group");
+                    FC.$(wyw.lineStart).setAttribute("group", FC.$(wyw.lineEnd).getAttribute("group"));
+                    FC.$(wyw.lineEnd).setAttribute("group", FC.v);
+
+                    FC.v = FC.$(wyw.lineStart).style.zIndex;
+                    FC.$(wyw.lineStart).style.zIndex = FC.$(wyw.lineEnd).style.zIndex;
+                    FC.$(wyw.lineEnd).style.zIndex = FC.v;
+
+                    FC.$(wyw.lineStart).style.left = lineStartXY.left + "px";
+                    FC.$(wyw.lineStart).style.top = lineStartXY.top + "px";
+
+                    FC.v = wyw.lineStart;
+                    wyw.lineStart = wyw.lineEnd;
+                    wyw.lineEnd = FC.v;
+
+                    this.line.host = this.line.host == "red" ? "black" : "red";
+                    FC.$("message").innerHTML = this.line.host == "red" ? "red side moveing" : "black side moveing";
+                    wyw.lineColor('red');
+                    this.initEvent();
+                    this.youLost();
+                    if (this.line.host == "black") {
+                        wyw.robot();
+                    } else {
+                        FC.display(wyw.lineEnd, 'none');
+                        wyw.lineColor('red');
+                    }
+                } else {
+                    FC.$(wyw.lineStart).style.left = lineStartXY.left + "px";
+                    FC.$(wyw.lineStart).style.top = lineStartXY.top + "px";
+                    FC.display(wyw.lineEnd, 'none');
+                    wyw.lineColor('red');
+                }
+
+            },
+            youLost: function () {
+                redline = 0;
+                blackline = 0;
+                FC.len = wyw.line.idArr.length;
+                for (var i = 0; i < FC.len; i++) {
+                    if (FC.$(wyw.line.idArr[i]).getAttribute("group") == "red") {
+                        this.findGreenLine(FC.$(wyw.line.idArr[i]));
+                        redline = redline + FC.arr.length;
+                    }
+                    if (FC.$(wyw.line.idArr[i]).getAttribute("group") == "black") {
+                        this.findGreenLine(FC.$(wyw.line.idArr[i]));
+                        blackline = blackline + FC.arr.length;
+                    }
+                }
+                if (redline == 0) { FC.$("message").innerHTML = "game over !<br />the black side win !<br /><br />let's <a href='javascript:wyw.init()'>do</a> it again"; }
+                if (blackline == 0) { FC.$("message").innerHTML = "game over !<br />the red side win !<br /><br />let's <a href='javascript:wyw.init()'>do</a> it again"; }
+            },
+            findGreenLine: function (obj) {
+                var greenLine = obj.id + this.lineEnd;
+                FC.arr = new Array();
+                if (greenLine == "AB" || greenLine == "BA") {
+                    FC.arr[0] = "lineAB";
+                } else if (greenLine == "AC" || greenLine == "CA") {
+                    FC.arr[0] = "lineAC";
+                } else if (greenLine == "DB" || greenLine == "BD") {
+                    FC.arr[0] = "lineBD";
+                } else if (greenLine == "AE" || greenLine == "EA") {
+                    for (var i = 1; i < 27; i++) {
+                        if (i % 2 == 1) {
+                            FC.arr[FC.arr.length] = "lineE" + i;
+                        }
+                    }
+                } else if (greenLine == "BE" || greenLine == "EB") {
+                    for (var i = 31; i < 57; i++) {
+                        if (i % 2 == 0) {
+                            FC.arr[FC.arr.length] = "lineE" + i;
+                        }
+                    }
+                } else if (greenLine == "CE" || greenLine == "EC") {
+                    for (var i = 1; i < 27; i++) {
+                        if (i % 2 == 0) {
+                            FC.arr[FC.arr.length] = "lineE" + i;
+                        }
+                    }
+                } else if (greenLine == "DE" || greenLine == "ED") {
+                    for (var i = 31; i < 57; i++) {
+                        if (i % 2 == 1) {
+                            FC.arr[FC.arr.length] = "lineE" + i;
+                        }
+                    }
+                }
+            },
+            lineColor: function (color) {
+                return;
+                FC.len = FC.arr.length;
+                for (var i = 0; i < FC.len; i++) {
+                    FC.$(FC.arr[i]).style.borderColor = color;
+                }
+            }
+        };
+        //fan common
+        FC = {
+			e:null,
+            v: '',
+            len: 0,
+            arr: {},
+            trimPX: function (v) { return v == "auto" ? 0 : parseFloat(v.substr(0, v.length - 2)); },
+            $: function (id) { return document.getElementById(id); },
+            display: function (id, v) { return; if (v != null) this.$(id).style.display = v; else this.$(id).style.display = this.$(id).style.display == "none" ? "block" : "none"; },
+			moveing: function(obj){
+				obj.onmousedown = function (event) {
+					FC.e=event;
+					isMove = true;
+					eX = FC.e.clientX, eY = FC.e.clientY;
+					objLeft = FC.trimPX(this.style.left);
+					objTOP = FC.trimPX(this.style.top);
+					minLeft = 0 - (window.innerWidth % 2 == 1 ? (window.innerWidth / 2) : (window.innerWidth / 2 - 1));
+					maxLeft = (window.innerWidth / 2-33);
+					minTop = -40;
+					maxTop = window.innerHeight - 40 - 33;
+					if (document.all) { this.setCapture(); }
+					document.onmousemove = function () {
+						if (isMove) {
+							if (
+							    (objLeft + FC.e.clientX - eX) > minLeft && (objLeft + FC.e.clientX - eX) < maxLeft &&
+							    (objTOP + FC.e.clientY - eY) > minTop && (objTOP + FC.e.clientY - eY) <maxTop
+							){
+						        obj.style.left = (objLeft + FC.e.clientX - eX) + "px";
+						        obj.style.top = (objTOP + FC.e.clientY - eY) + "px";
+							} 
+						}
+					}
+					document.onmouseup = function () { if (document.all) { obj.releaseCapture() }; isMove = false; obj.onmousemove = null; wyw.changeStyle(obj); }
+				}
+			}
+        };
+    </script>
+</body>
+</html>
