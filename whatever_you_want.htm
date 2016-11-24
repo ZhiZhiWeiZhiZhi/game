@@ -183,7 +183,7 @@
         <div id="B" class="ABCDE redB "><div class="redBackground"></div></div>
         <div id="C" class="ABCDE blackC "><div class="blackBackground"></div></div>
         <div id="D" class="ABCDE blackD "><div class="blackBackground"></div></div>
-        <div id="E" class="ABCDE blackE displaynone"></div>
+        <div id="E" class="ABCDE blackE"></div>
         <div class="other"><div class="contents"></div></div>
         <div class="otherbehind"></div>
         <div id="message" class="message"></div>
@@ -304,8 +304,10 @@
 
                     // robot to move
                     var stepLeft = 0, stepTop = 0, t = 200;
-                    lineStartLeft = FC.trimPX(FC.$(this.lineStart).style.left);
-                    lineStartTop = FC.trimPX(FC.$(this.lineStart).style.top);
+					var objLineStart = FC.$(this.lineStart);
+					
+                    lineStartLeft = FC.trimPX(FC.getClass(objLineStart,'left'));
+                    lineStartTop = FC.trimPX(FC.getClass(objLineStart,'top'));
 
                     lineEndtLeft = FC.trimPX(FC.$(this.lineEnd).style.left);
                     lineEndTop = FC.trimPX(FC.$(this.lineEnd).style.top);
@@ -316,10 +318,11 @@
                 }
             },
             robotMoveing: function (stepLeft, stepTop, lineStartLeft, lineStartTop, lineEndtLeft, lineEndTop) {
-                FC.$(wyw.lineStart).style.left = (FC.trimPX(FC.$(wyw.lineStart).style.left) + stepLeft) + "px";
+				var objLineStart = FC.$(this.lineStart);
+                FC.$(wyw.lineStart).style.left = (FC.trimPX(FC.getClass(objLineStart,'left')) + stepLeft) + "px";
 
-                lineStartLeftCurrent = FC.trimPX(FC.$(wyw.lineStart).style.left);
-                lineStartTopCurrent = FC.trimPX(FC.$(wyw.lineStart).style.top);
+                lineStartLeftCurrent = FC.trimPX(FC.getClass(objLineStart,'left'));
+                lineStartTopCurrent = FC.trimPX(FC.getClass(objLineStart,'top'));
 
                 stepTop = (stepLeft == 0 || stepTop == 0) ? stepTop : ((lineStartLeftCurrent - lineStartLeft) * (lineEndTop - lineStartTop) / (lineEndtLeft - lineStartLeft) + lineStartTop - lineStartTopCurrent);
                 if (lineEndTop > lineStartTop) {
@@ -328,7 +331,7 @@
                     stepTop = stepTop > 0 ? 0 - stepTop : stepTop;
                 }
 
-                FC.$(wyw.lineStart).style.top = (FC.trimPX(FC.$(wyw.lineStart).style.top) + stepTop) + "px";
+                FC.$(wyw.lineStart).style.top = (FC.trimPX(FC.getClass(objLineStart,'top')) + stepTop) + "px";
 
                 if (FC.trimPX(FC.$(wyw.lineStart).style.left) - lineEndtLeft > -10 &&
                     FC.trimPX(FC.$(wyw.lineStart).style.left) - lineEndtLeft < 10 &&
@@ -477,6 +480,13 @@
             v: '',
             len: 0,
             arr: {},
+			getClass: function(obj,name){
+				if(obj.currentStyle){
+					return obj.currentStyle[name];//IE下获取非行间样式
+				}else{
+					return getComputedStyle(obj,false)[name];//FF、Chorme下获取费行间样式
+				}
+			},
             trimPX: function (v) { return v == "auto" ? 0 : parseFloat(v.substr(0, v.length - 2)); },
             $: function (id) { return document.getElementById(id); },
             display: function (id, v) { return; if (v != null) this.$(id).style.display = v; else this.$(id).style.display = this.$(id).style.display == "none" ? "block" : "none"; },
@@ -485,25 +495,33 @@
 					FC.e=event;
 					isMove = true;
 					eX = FC.e.clientX, eY = FC.e.clientY;
-					objLeft = FC.trimPX(this.style.left);
-					objTOP = FC.trimPX(this.style.top);
+					objLeft = FC.trimPX(FC.getClass(this,'left'));
+					objTOP = FC.trimPX(FC.getClass(this,'top'));
 					minLeft = 0 - (window.innerWidth % 2 == 1 ? (window.innerWidth / 2) : (window.innerWidth / 2 - 1));
 					maxLeft = (window.innerWidth / 2-33);
 					minTop = -40;
 					maxTop = window.innerHeight - 40 - 33;
 					if (document.all) { this.setCapture(); }
-					document.onmousemove = function () {
+					if (event.preventDefault) {
+							event.preventDefault();
+							event.stopPropagation();
+					}
+					document.onmousemove = function (event) {
+						FC.e=event;
 						if (isMove) {
-							if (
-							    (objLeft + FC.e.clientX - eX) > minLeft && (objLeft + FC.e.clientX - eX) < maxLeft &&
-							    (objTOP + FC.e.clientY - eY) > minTop && (objTOP + FC.e.clientY - eY) <maxTop
-							){
+							if ((objLeft + FC.e.clientX - eX) > minLeft && (objLeft + FC.e.clientX - eX) < maxLeft &&
+							    (objTOP + FC.e.clientY - eY) > minTop && (objTOP + FC.e.clientY - eY) <maxTop){
 						        obj.style.left = (objLeft + FC.e.clientX - eX) + "px";
 						        obj.style.top = (objTOP + FC.e.clientY - eY) + "px";
 							} 
 						}
 					}
-					document.onmouseup = function () { if (document.all) { obj.releaseCapture() }; isMove = false; obj.onmousemove = null; wyw.changeStyle(obj); }
+					document.onmouseup = function () { 
+						if (document.all) { obj.releaseCapture() }; 
+						isMove = false; 
+						obj.onmousemove = null; 
+						wyw.changeStyle(obj); 
+					}
 				}
 			}
         };
